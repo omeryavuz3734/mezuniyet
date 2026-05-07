@@ -1,0 +1,212 @@
+body {
+    /* Arka plan resmi */
+    background-image: url('turkbayragi.jpg'); /* Buraya kendi resminin yolunu yaz */
+    
+    /* Resmin sayfada sabit kalmasını sağlar (Siz kaydırdıkça resim oynamaz) */
+    background-attachment: fixed;
+    
+    /* Resmin ekranı tamamen kaplamasını sağlar */
+    background-size: cover;
+    
+    /* Resmi ortalar */
+    background-position: center;
+    
+    /* Yazı fontun ve diğer temel ayarların burada kalabilir */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0; /* Üst ve alt boşluğu biraz artırdık */
+    position: relative;
+    display: flex;
+    flex-direction: column; /* İçerikleri (başlık ve menü) alt alta dizer */
+    align-items: center;    /* Her şeyi yatayda ortalar */
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;           /* Yan yana dizer */
+    justify-content: center;  /* Ortalar */
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Linklerin arasındaki mesafeyi biraz açtık */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    
+    /* Buton görünümü için eklediklerimiz */
+    padding: 8px 20px;       /* Yazının etrafındaki boşluk (üst-alt, sağ-sol) */
+    border: 2px solid white;  /* Beyaz ince çerçeve */
+    border-radius: 25px;     /* Kenarları yuvarlar */
+    transition: all 0.3s ease; /* Renk geçişini yumuşatır */
+    display: inline-block;    /* Butonun şeklini korumasını sağlar */
+}
+
+/* Mouse ile üzerine gelince ne olacağını buraya ekliyoruz */
+nav ul li a:hover {
+    background-color: white; /* İçini beyaza boyar */
+    color: #34495e;          /* Yazıyı koyu gri yapar */
+}
+
+/* Izgara (Grid) Yapısı */
+.grid-container {
+    display: grid;
+    /* Ekran genişliğine göre 3 kolon oluşturur, ekran küçülürse otomatik ayarlar */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px; /* Sayfanın çok fazla yayılmaması için */
+    margin: 0 auto; /* Grid'i sayfanın ortasına hizalar */
+}
+
+main {
+    padding-bottom: 80px; /* Bandın yüksekliğinden biraz fazla boşluk bıraktık */
+}
+
+/* Tablet ve telefonlar için 3'lü yapıyı 2'li veya 1'li yapar (Mobil uyum) */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sınıf Kartları */
+.class-card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    min-height: 220px; /* Kartların yüksekliğini buradan ayarlayabilirsin */
+    border-radius: 15px;
+    overflow: hidden; /* Overlay'in köşelerden taşmaması için */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: white;
+}
+
+/* Kartın üzerine siyah bir perde çeken katman */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    
+    /* TAM ORTALAMA İÇİN KRİTİK KISIM */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikeyde ortalar */
+    align-items: center;     /* Yatayda ortalar */
+    text-align: center;      /* Metni kendi içinde ortalar */
+    
+    padding: 0; /* Eğer dışarıdan gelen bir padding varsa sıfırlıyoruz */
+    box-sizing: border-box; /* Padding olsa bile genişliği bozmaz */
+    transition: background 0.3s ease;
+}
+
+.card-overlay h3 {
+    margin: 0;
+    color: white; /* Sınıf ismini beyaz yapar */
+    font-family: 'Impact', sans-serif;
+    font-size: 1.8rem;
+}
+
+.card-overlay p {
+    margin: 10px 0 0 0;
+    color: #ecf0f1; /* Alt yazıyı hafif kırık beyaz yapar (daha profesyonel durur) */
+    text-decoration: none;
+}
+
+/* Hover Efektleri (Fare üstüne gelince) */
+.class-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Hafif yükselme ve büyüme */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.class-card:hover .card-overlay {
+    background: rgba(0, 0, 0, 0.3); /* Üstüne gelince fotoğraf biraz daha aydınlanır */
+}
+
+footer {
+    text-align: center;
+    padding: 10px; /* 20px'den 10px'e düşürerek daralttık */
+    background: #2c3e50;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem; /* Yazıyı biraz küçülterek bandı daha zarif yaptık */
+}
+
+.class-category h2 {
+    font-family: 'Impact', sans-serif;
+    font-size: 3rem;
+    color: black;
+    -webkit-text-stroke: 0.5px white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Logoyu ve yazıyı dikeyde aynı hizaya getirir */
+    justify-content: center; /* Başlığı ortada tutmaya çalışır */
+    gap: 20px; /* Logo ve yazı arasındaki boşluk */
+}
+
+.logo {
+    width: 60px; /* Logonu istediğin boyuta göre buradan ayarlayabilirsin */
+    height: auto;
+    position: absolute; /* Logoyu tamamen sola yaslamak istersen bunu kullan */
+    left: 20px;
+}
+
+/* Başlık hizalaması için */
+header h1 {
+    margin: 0;
+    margin-bottom: 10px; /* Menü ile arasına boşluk */
+    flex-grow: 1;
+    text-align: center;
+
+    /* --- YENİ EKLENEN KONTÜR EFEKTİ KODLARI --- */
+    
+    /* 1. Yazının iç rengini kırmızı yap */
+    color: #990033;
+    
+    /* 2. Yazının dışına 1 piksel genişliğinde beyaz kontür ekle */
+    -webkit-text-stroke: 0.5px white; /* Chrome, Safari ve yeni Edge için */
+
+    /* 3. Kontürü daha dolgun ve pürüzsüz göstermek için beyaz bir gölge ekle (isteğe bağlı ama önerilir) */
+    text-shadow: 0.5px 0.5px 0 white;
+       
+    /* Yazının daha kalın görünmesini sağlar, kontür etkisini artırır */
+    font-weight: bold; 
+    font-family: 'Impact', sans-serif;
+    font-size: 3rem; /* Yazıyı biraz büyütebilirsin */
+}
+
+a.class-card.renkli-sinif .card-overlay h3 {
+    color: #990033 !important;
+}
