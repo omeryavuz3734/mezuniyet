@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hocalarımızdan Mesajlar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a; /* Koyu tema */
+            color: white;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .teacher-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #cc0000;
+        }
+
+        .teacher-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .teacher-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .teacher-name {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        .video-btn {
+            background: #cc0000;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="background-image: url('mustafakemal.png'); height: 350px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative;">
+        <a href="index.html" style="position: absolute; top: 20px; left: 20px; color: white; border: 1px solid white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold;">← Ana Sayfa</a>
+        <h1 style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7); font-size: 3rem;">HOCALARIMIZ</h1>
+    </header>
+
+    <main class="teacher-grid">
+        
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Arzu Özmen', 'Şairin yolun yarısı dediği yerde değilim belki ama yaşadığım çeyreğinde hakkını vermiş olmanın verdiği gururunu yaşıyorum. Bu bir son değil biliyorum; yeni başlangıçlara kapımı açıyor olmanın heyecanı var kalbimde. İyi ki Mehmet Akif ailesinin bir üyesi oldum.')">
+        <img src="hocafotograflari/arzuhoca.jpg" alt="Arzu Özmen" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Arzu Özmen</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Aslı Solmaz', 'Mehmet Akif Ersoy ÇPAL’ne gelmekle birlikte hayatıma yeni bir sayfa açtığım bu okulda, 4. kez 12. sınıflarımızı mezun etmenin gururunu yaşamaktayım. Küçük bir çocuk olarak gelip ayakları yere basan yetişkinler olarak okuldan ayrılıyorsunuz. Bu sevinci ve gururunuzu biz de sizinle birlikte paylaşıyoruz. dünyayı daha güzel bir yer yapacağınıza olan inancım tamdır. Hepinizi sevgi ile kucaklıyor, başarılar diliyorum.')">
+        <img src="hocafotograflari/aslihoca.jpg" alt="Aslı Solmaz" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Aslı Solmaz</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Damla Gülser', 'Canım öğrencilerim, Sınıfta birlikte güldüğümüz, öğrendiğimiz ve paylaştığımız her anı özleyeceğim. Siz artık kendi hikayenizi yazacaksınız. Hepinizin yolu aydınlık olsun sizi çok seviyorum.')">
+        <img src="hocafotograflari/damlahoca.jpg" alt="Damla Gülser" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Damla Gülser</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Gülşah Semizoğlu', 'Sevgili öğrencilerim! İnanarak söylediğim cümlelerimi belki bir an gelir işinize yarar umuduyla tekrar etmek istiyorum. Değerli gençler her insan hayatta bir şey olur, mutlaka bir meslek edinir ancak herkes iyi, ahlaklı, erdemli ve ilkeli olamaz. Sizin için en büyük temennim bu nitelikleri şahsiyetinde taşıyan ve hayatta yol alirken mutlu olan bireyler olmanızdır Önce kendinize ve en nihayetinde vatanımıza-milletimize hayrı dokunan yıllarınız olsun, yolunuz ve bahtınız açık olsun.')">
+        <img src="hocafotograflari/gulsahhoca.jpg" alt="Gülşah Semizoğlu" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Gülşah Semizoğlu</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('İbrahim Bayram', 'Sevgili gençler, hayatınızda hiç bir zaman unutmayacağıniz yıllar biterken şimdi yeni başlangıçlar  zamanı.. Hepinize hayırlı mutlu bir gelecek dilerim. Yolunuz, bahtınız açık olsun.')">
+        <img src="hocafotograflari/ibrahimhoca.jpg" alt="İbrahim Bayram" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">İbrahim Bayram</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Serkan Sain', 'Her bir birinden değerli 12. sınıf öğrencilerim. İyisiyle, kötüsüyle lise hayatınız sona erdi. Bu bir fragmandı ve asıl hayat sizin için şimdi başlıyor. Yapacağınız hiçbir hatadan çekinmeyin, çünkü o hatalar en az lisede aldığınız dersler kadar hayat tecrübe katacak. Umarim geride kalan hayatınız da kalbiniz ve karakteriniz kadar güzel geçer. Hepinizi çok seviyorum, yolunuz açık olsun.')">
+        <img src="hocafotograflari/serkanhoca.jpg" alt="Serkan Sain" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Serkan Sain</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Türker Aydın', 'Atölyemizde birlikte çok şey pişirdik, ama asıl pişen sizdiniz. Her yanlış kesilen sebze ve meyve , her tutturulan sos, her “hocam yaktım!” feryadının ardında büyüdünüz. Sabır öğrendiyseniz ocak başında, ekip çalışması öğrendiyseniz o dar atölyede, hatadan ders çıkarmayı öğrendiyseniz de tekrar-dene çizgisinde öğrendiniz. Mutfak sizi sadece aşçı yapmadı; sizi insan yaptı. Bugün o mutfaktan çıkıp hayata adım atıyorsunuz. Ama şunu unutmayın: Hayat da büyük bir mutfak. Bazen malzeme eksik olacak, bazen tarif tutmayacak, bazen servis saatinde geç kalacaksınız , bazen en güzel planınız yüzünüze patlayacak. O anlarda panikleyin, ama ocağı söndürmeyin. Çünkü iyi bir aşçının sırrı hiç yanmaması değil, her yandıktan sonra yeniden başlamasıdır. Ve her zaman söylediğim gibi; ‘’ Birbirinizin açığını kapatın.’’ Nereye giderseniz gidin, ne yaparsanız yapın, o mutfaktaki azminizi yanınızda götürün')">
+        <img src="hocafotograflari/turkerhoca.jpg" alt="Türker Aydın" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Türker Aydın</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+        <a href="vedakonusmalari/zeynephoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/zeynephoca.jpg" alt="Zeynep Akçalı" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Zeynep Akçalı</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+        <a href="vedakonusmalari/onurhoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/onurhoca.jpg" alt="Onur Torun" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Onur Torun</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+                <a href="vedakonusmalari/nevinhoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/nevinhoca.jpg" alt="Nevin Aybek" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Nevin Aybek</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+                <a href="vedakonusmalari/metinhoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/metinhoca.jpg" alt="Metin Özdemir" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Metin Özdemir</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+     <a href="vedakonusmalari/enishoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/enishoca.jpg" alt="Enis Güney" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Enis Güney</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+     <a href="vedakonusmalari/suleymanhoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/suleymanhoca.jpg" alt="Süleyman Koçoğlu" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Süleyman Koçoğlu</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+     <a href="vedakonusmalari/busrahoca.mp4" class="teacher-card">
+            <img src="hocafotograflari/busrahoca.jpg" alt="Büşra Karataş" class="teacher-photo">
+            <div class="teacher-info">
+                <div class="teacher-name">Büşra Karataş</div>
+                <div class="video-btn">Veda Konuşmasını İzle</div>
+            </div>
+        </a>
+
+<a href="javascript:void(0)" class="teacher-card" onclick="openModal('Sema Güççükhüseyinoğlu', 'Lise hayatınızın son sayfasını kapatırken, aslında kendi hikayenizin en heyecanlı bölümüne başlıyorsunuz. Bilginin ışığında, cesaretle ve daima vicdanınızın sesini dinleyerek ilerlemenizi diliyorum. Her birinizin dünyada güzel bir iz bırakacağına inancım tam; yolunuz açık olsun.')">
+        <img src="hocafotograflari/semahoca.jpg" alt="Sema Güççükhüseyinoğlu" class="teacher-photo">
+        <div class="teacher-info">
+            <div class="teacher-name">Sema Güççükhüseyinoğlu</div>
+            <div class="video-btn" style="background-color: #2c3e50;">Veda Konuşmasını Oku</div>
+        </div>
+    </a>
+
+
+    </main>
+
+<div id="textModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTeacherName">Hoca Adı</h2>
+        <hr>
+        <p id="modalTeacherText">Veda yazısı buraya gelecek...</p>
+    </div>
+</div>
+
+<script>
+function openModal(name, text) {
+    document.getElementById('modalTeacherName').innerText = name;
+    document.getElementById('modalTeacherText').innerText = text;
+    document.getElementById('textModal').style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('textModal').style.display = "none";
+}
+
+// Pencere dışına tıklayınca kapatma
+window.onclick = function(event) {
+    if (event.target == document.getElementById('textModal')) {
+        closeModal();
+    }
+}
+</script>
+
+</body>
+</html>

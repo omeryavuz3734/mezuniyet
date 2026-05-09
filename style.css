@@ -1,30 +1,59 @@
 body {
-    /* Arka plan resmi */
-    background-image: url('turkbayragi.jpg'); /* Buraya kendi resminin yolunu yaz */
-    
-    /* Resmin sayfada sabit kalmasını sağlar (Siz kaydırdıkça resim oynamaz) */
-    background-attachment: fixed;
-    
-    /* Resmin ekranı tamamen kaplamasını sağlar */
-    background-size: cover;
-    
-    /* Resmi ortalar */
-    background-position: center;
-    
-    /* Yazı fontun ve diğer temel ayarların burada kalabilir */
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* --- KRİTİK DEĞİŞİKLİK BURADA --- */
+    /* Eski 'background-image' satırını sileceğiz ve düz renk vereceğiz */
+    
+    /* Koyu Kırmızı Arka Plan (Rengini buradan ayarlayabilirsin) */
+    background-color: #8B0000; /* Daha koyu, asil bir kırmızı tonu */
+    
+    /* Alternatif Koyu Kırmızı Tonları:
+       #A52A2A (Brown-red)
+       #800000 (Maroon)
+    */
+
+    /* Resim kullanmayacağımız için bu satırlar artık gereksiz, silinebilir: */
+    /* background-image: url('turkbayragi.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    
+    /* Eğer içeriğin arkasında kalmasını istiyorsan, bu satır kalabilir: */
+    background-attachment: fixed; 
+    
+    color: white; /* Sayfadaki yazı rengi (okunması için beyaz) */
 }
 
 header {
-    background-color: #2c3e50;
+    /* 1. Arka Plan: Senin görselini ve aşağı doğru kırmızıya akan gradyanı birleştiriyoruz */
+    background: linear-gradient(
+        to bottom, 
+        rgba(44, 62, 80, 0) 0%,      /* Üst kısım şeffaf (görselin orijinali görünür) */
+        rgba(44, 62, 80, 0) 75%,     /* %75'e kadar şeffaflık devam eder */
+        rgba(204, 0, 0, 0.8) 100%    /* En altta Türk Bayrağı kırmızısına yumuşak geçiş */
+    ), url('mustafakemal.png');
+
+    /* Görsel Ayarları */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Boyut ve Yerleşim */
+    min-height: 400px; 
     color: white;
-    padding: 20px 0; /* Üst ve alt boşluğu biraz artırdık */
     position: relative;
     display: flex;
-    flex-direction: column; /* İçerikleri (başlık ve menü) alt alta dizer */
-    align-items: center;    /* Her şeyi yatayda ortalar */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 0;
+    
+    /* Alttaki kaba çizgiyi yok eden yumuşatma */
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 nav {
@@ -209,4 +238,45 @@ header h1 {
 
 a.class-card.renkli-sinif .card-overlay h3 {
     color: #990033 !important;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Modal Kutusu */
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Kapatma Butonu */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#modalTeacherText {
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 20px;
 }
